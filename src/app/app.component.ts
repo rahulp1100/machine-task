@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import postJson from '../assets/data.json';
 interface post {
   id: number;
   question: string;
   ans: string;
-
 }
 
 @Component({
@@ -16,30 +15,32 @@ interface post {
 export class AppComponent {
   title = 'machine-task';
   questions: post[] = postJson;
-  eligibilityForm: FormGroup;
+  testForm: FormGroup;
+  submitted = false;
  
   constructor(private fb: FormBuilder){}
   ngOnInit(): void {
     console.log(this.questions);
 
-    this.eligibilityForm = this.fb.group({
+    this.testForm = this.fb.group({
       'radio': new FormControl(''),
       'checkbox': new FormControl(''),
-      'textbox': new FormControl(''),
+      'textbox': new FormControl('',[Validators.required]),
       'combobox': new FormControl(''),
     })
 
   }
-
-  onRadioChange(sport) {
-    console.log(sport);
+  get f(){   
+    return this.testForm.controls;  
   }
 
   save(){
-    console.log(this.eligibilityForm.value);
-  }
+    this.submitted = true;
+    if (this.testForm.invalid) {
+      return;
+    }
+    console.log(this.testForm.value)
+ 
 
-  checkbox(){
-  }
-
+}
 }

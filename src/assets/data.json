@@ -11,12 +11,12 @@
     },
     {
         "id":3,
-        "question":"Candidate Name",
+        "question":"Do you have a sister?",
         "ans":"Yes"
     },
     {
         "id":4,
-        "question":"Currently working ?",
+        "question":"Have you ever met a celebrity?",
         "ans":"Yes"
         
     }
