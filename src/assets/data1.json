@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "question":"Are you indian ?",
+        "ans1":"Yes",
+        "ans2":"No"
+    },
+    {
+        "id":2,
+        "question":"Currently working ?",
+        "ans1":"Yes",
+        "ans2":"No"
+    },
+    {
+        "id":3,
+        "question":"Candidate Name",
+        "ans1":"Yes",
+        "ans2":"No"
+    },
+    {
+        "id":4,
+        "question":"Currently working ?",
+        "ans1":"Yes",
+        "ans2":"No"
+        
+    }
+]

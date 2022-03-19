@@ -1,0 +1,31 @@
+
+<div class="toolbar" role="banner">
+    <div class="spacer"></div>
+</div>
+<form [formGroup]="eligibilityForm">
+<div class="content" role="main">  
+  <div *ngFor="let list of questions;let i=index;">
+    <p>{{list.id}}.  {{list.question}}</p>
+    <div *ngIf="i==0" >
+      <input type="radio" value="Yes" name="radio" formControlName="radio" [(ngModel)]="list.ans">Yes
+      <input type="radio" name="radio" value="No"  formControlName="radio" [(ngModel)]="list.ans">No
+     </div>  
+    <div *ngIf="i==1" >
+      <input type="checkbox" value="Yes" name="checkbox" [(ngModel)]="list.ans" formControlName="checkbox" >yes
+      <!-- <input (click)="checkbox()" type="checkbox" value="No" name="checkbox"  >No -->
+    </div>
+    <div *ngIf="i==2" >
+      <input type="text" formControlName="textbox" [(ngModel)]="list.ans">
+    </div>
+    <div *ngIf="i==3" >
+      <select formControlName="combobox">
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+  </div>
+  <button class="btn" (click)="save()">save</button>
+ 
+</div>
+</form>
+<router-outlet></router-outlet>
